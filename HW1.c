@@ -19,11 +19,16 @@ void push(struct Node **head_ref, int new_data)
 
 void print_ll(struct Node *head)
 {
-   do
+   
+   while(head->next != NULL)
    {
       printf("%d", head->data);
       head = head->next;
-   }while(head->next != NULL);
+      if(head->next == NULL)
+      {
+         printf("%d", head->data);
+      }
+   }
 }
 
 void find_in_ll(struct Node *head,int s_data)
