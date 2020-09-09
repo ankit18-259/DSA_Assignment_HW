@@ -26,6 +26,7 @@ void print_ll(struct Node *head)
       printf("%d", head->data);
       head = head->next;
    }
+   printf("\n");
 }
 
 bool search(struct Node* head, int x) 
@@ -46,7 +47,7 @@ int main()
    while(1)
    {
       int new_data, s_data;
-      printf("Enter your Selection: \n\t1. Add at beginning\n\t2. Search\n\t3. Display\n>>> ");
+      printf("Enter your Selection: \n\t1. Add at beginning\n\t2. Search\n\t3. Display\n\t4. Exit\n>>> ");
       scanf("%d", &n);
       switch(n)
       {
@@ -57,8 +58,9 @@ int main()
             break;
          
          case 2:
+            printf("Enter your search: ");
             scanf("%d", &s_data);
-            search(head, s_data)? printf("Yes") : printf("No");
+            search(head, s_data)? printf("Yes \n") : printf("No \n");
             break;
 
          case 3:
@@ -66,6 +68,7 @@ int main()
          
             break;
          case 4:
+            return 0;
             break;
       }
    }
